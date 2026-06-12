@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelX | Vehicle Details</title>
+
+    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h1 class="logo">Wheel<span>X</span></h1>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <nav class="nav-links">
+            <a href="index.html" class="btn">Home</a>
+            <a href="newcars.html" class="btn">New Cars</a>
+            <a href="sell.html" class="btn">Sell</a>
+            <a href="showroom.html" class="btn">Showrooms</a>
+            <a href="contact.html" class="btn">Contact</a>
+            <a href="about.html" class="btn">About</a>
+            <a href="login.html" class="btn">Login / Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Vehicle Details -->
+    <section class="details-container">
+
+        <div class="image-box">
+            <img id="carImage" alt="Vehicle Image">
+        </div>
+
+        <div class="info-box">
+            <h2 id="carName"></h2>
+            <h3 id="carPrice"></h3>
+
+            <ul>
+                <li><strong>Year:</strong> <span id="carYear"></span></li>
+                <li><strong>Fuel Type:</strong> <span id="carFuel"></span></li>
+                <li><strong>Mileage:</strong> <span id="carMileage"></span></li>
+                <li><strong>Transmission:</strong> <span id="carTransmission"></span></li>
+                <li><strong>Owner:</strong> <span id="carOwner"></span></li>
+                <li><strong>Location:</strong> <span id="carLocation"></span></li>
+            </ul>
+
+
+
+            <a href="contact.html">
+                <button class="contact-btn">
+                    <i class="fa-solid fa-phone"></i> Contact Seller
+                </button>
+            </a><br><br>
+            
+            <h1 class="text1">
+                Drive Smart. Choose Trusted. Discover Your Next Ride with Wheel<span>X</span>.
+            </h1><br>
+
+            <p class="sub-text">
+                Buy and sell used cars & bikes with confidence, transparency, and ease.
+            </p>
+
+
+        </div>
+
+    </section>
+
+<div class="trust-content">
+ <h1 class="text2">
+     Wheel<span>X</span> is built on trust, quality, and reliability. We deliver the best experience
+  for buying and selling used cars and bikes through verified listings, transparent
+  information, and customer-first service. Every deal with Wheel<span>X</span> is secure, simple,
+  and confidence-driven.
+ </h1>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="logos">Wheel<span>X</span></h3>
+                <p>Your trusted used vehicles marketplace.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: donkm555@gmail.com</p>
+                <p>Phone: +91 7559890610</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 WheelX. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script>
+        const car = JSON.parse(localStorage.getItem("selectedCar"));
+
+        if (car) {
+            document.getElementById("carImage").src = car.image;
+            document.getElementById("carName").textContent = car.name;
+            document.getElementById("carPrice").textContent = "₹" + car.price;
+            document.getElementById("carYear").textContent = car.year;
+            document.getElementById("carFuel").textContent = car.fuel;
+            document.getElementById("carMileage").textContent = car.mileage;
+            document.getElementById("carTransmission").textContent = car.transmission;
+            document.getElementById("carOwner").textContent = car.owner;
+            document.getElementById("carLocation").textContent = car.location;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelX | Used Vehicles</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!--========= NAVBAR ========== -->
+    <header class="navbar">
+        <h1 class="logo">Wheel<span>X</span></h1>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <nav class="nav-links">
+            <a href="newcars.html" class="btn">New Cars</a>
+            <a href="sell.html" class="btn">Sell</a>
+            <a href="showroom.html" class="btn">Showrooms</a>
+            <a href="contact.html" class="btn">Contact</a>
+            <a href="about.html" class="btn">About</a>
+            <a href="login.html" class="btn">Login / Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- ====== HERO ======-->
+    <section class="hero">
+        <div class="hero-content">
+
+            <div class="search-box">
+                <input type="text" id="brandModel" placeholder="Search Your Dream Vehicle...">
+                <button onclick="searchVehicle()">Search</button>
+            </div>
+
+
+            <h2>Your Trusted Platform for Used Cars & Bikes</h2>
+            <p>Explore quality-checked vehicles from verified sellers.</p>
+
+
+        </div>
+    </section>
+
+    <script>
+        function searchVehicle() {
+            const brandModel = document.getElementById("brandModel").value.trim();
+            if (!brandModel) {
+                alert("Please enter a vehicle name");
+                return;
+            }
+            window.location.href = "browse.html?brand=" + encodeURIComponent(brandModel);
+        }
+    </script>
+
+
+    <section class="featured">
+        <h2>USED VEHICLES</h2>
+        <p>Top-quality used cars at the best prices</p>
+
+        <div class="cards">
+
+
+            <div class="card">
+                <img
+                    src="https://imgd.aeplcdn.com/370x208/n/cw/ec/121943/verna-facelift-exterior-right-front-three-quarter-100.jpeg?isig=0&q=80">
+                <h3>Hyundai Verna</h3>
+                <p>Petrol • 2021 • 35,000 km</p>
+                <span class="price">₹8.5 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'Hyundai Verna','850000','2021','Petrol','17 km/l','Manual','First Owner','Kerala',
+                'https://imgd.aeplcdn.com/370x208/n/cw/ec/121943/verna-facelift-exterior-right-front-three-quarter-100.jpeg?isig=0&q=80'
+            )">View Details</button><br><br>
+                <p>
+                    <b> Hyundai Verna :</b>The Hyundai Verna combines bold, aerodynamic design with turbocharged
+                    performance and premium
+                    comfort. Equipped with advanced technology, refined interiors, and smooth handling, it delivers an
+                    exciting yet luxurious driving experience perfectly suited for modern city roads and highways.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="https://www.evoindia.com/h-upload/uid/V6KHEVUJ0Vdr5uP2yZ3mfueXJ2wxV21O.jpg">
+                <h3>Kia Seltos</h3>
+                <p>Diesel • 2020 • 42,000 km</p>
+                <span class="price">₹10.2 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'Kia Seltos','1020000','2020','Diesel','19 km/l','Manual','First Owner','Kochi',
+                'https://www.evoindia.com/h-upload/uid/V6KHEVUJ0Vdr5uP2yZ3mfueXJ2wxV21O.jpg'
+            )">View Details</button><br><br>
+                <p>
+                    <b>Kia Seltos :</b> The Kia Seltos blends bold SUV styling with powerful performance and premium
+                    comfort. With advanced
+                    technology, a refined interior, and confident road presence, it delivers a dynamic driving
+                    experience
+                    suited for both city streets and adventurous highways.
+                </p>
+            </div>
+
+            
+            <div class="card">
+                <img
+                    src="https://imgd.aeplcdn.com/1920x1080/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-64.jpeg?isig=0&q=80">
+                <h3>Maruti Baleno</h3>
+                <p>Petrol • 2019 • 28,000 km</p>
+                <span class="price">₹6.3 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'Maruti Baleno','630000','2019','Petrol','21 km/l','Manual','First Owner','Thrissur',
+                'https://imgd.aeplcdn.com/1920x1080/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-64.jpeg?isig=0&q=80'
+            )">View Details</button><br><br>
+                <p>
+                    <b>Maruti Baleno :</b>The Maruti Baleno is a stylish and fuel-efficient premium hatchback offering a
+                    smooth drive,
+                    spacious interiors, and modern features, making it ideal for comfortable city and highway travel.
+                </p>
+            </div>
+
+            
+            <div class="card">
+                <img src="https://spn-sta.spinny.com/blog/20221202123514/Toyota-Fortuner-1160x653.webp">
+                <h3>Toyota Fortuner</h3>
+                <p>Diesel • 2018 • 60,000 km</p>
+                <span class="price">₹22.5 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'Toyota Fortuner','2250000','2018','Diesel','14 km/l','Automatic','First Owner','Calicut',
+                'https://spn-sta.spinny.com/blog/20221202123514/Toyota-Fortuner-1160x653.webp'
+            )">View Details</button><br><br>
+                <p>
+                    <b> Toyota Fortuner :</b> The Toyota Fortuner is a powerful and premium SUV known for its bold
+                    design, strong performance, and
+                    excellent off-road capability, offering a comfortable ride with advanced features and reliable
+                    safety.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="https://cdni.autocarindia.com/ExtraImages/20210521012336_THARAUST.jpg">
+                <h3>Mahindra Thar</h3>
+                <p>Petrol • 2023 • 35,000 km</p>
+                <span class="price">₹14.5 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'Mahindra Thar','850000','2021','Petrol','17 km/l','Manual','First Owner','Kerala',
+                'https://cdni.autocarindia.com/ExtraImages/20210521012336_THARAUST.jpg'
+            )">View Details</button><br><br>
+                <p>
+                    <b>THAR :</b> Powerful engines, strong torque, and true 4x4 capability make the Mahindra Thar
+                    perfect for both city drives and off-road adventures.
+                </p>
+
+            </div>
+
+            <div class="card">
+                <img src="https://img.autotrader.co.za/31718998">
+                <h3>BMW 520d</h3>
+                <p>Petrol • 2024 • 22,000 km</p>
+                <span class="price">₹25.2 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'BMW 520d','1020000','2024','Petrol','19 km/l','Manual','First Owner','Kochi',
+                'https://img.autotrader.co.za/31718998'
+            )">View Details</button><br><br>
+                <p>
+                    <b>BMW :</b>BMW stands for sporty performance and luxury, offering dynamic driving, bold design, and
+                    advanced technology for a thrilling and premium experience.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <img
+                    src="https://img.autocarindia.com/Galleries/20200902071037_Mercedes-Benz-S-Class-2021-front-1.jpg?w=728&q=75">
+                <h3>Benz S Class</h3>
+                <p>Petrol • 2019 • 28,000 km</p>
+                <span class="price">₹6.3 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'Benz S Class','630000','2019','Petrol','21 km/l','Manual','First Owner','Thrissur',
+                'https://img.autocarindia.com/Galleries/20200902071037_Mercedes-Benz-S-Class-2021-front-1.jpg?w=728&q=75'
+            )">View Details</button><br><br>
+                <p>
+                    <b>Mercedes-Benz :</b>Mercedes-Benz represents luxury, performance, and advanced technology,
+                    delivering a premium
+                    driving experience with elegant design, powerful engines, and world-class comfort.
+                </p>
+            </div>
+
+            <div class="card">
+                <img
+                    src="https://gomechanic.in/blog/wp-content/uploads/2020/04/20200304071236_2019-Polo-GT-front-stat.jpg">
+                <h3>POLO GT</h3>
+                <p>Petrol • 2021 • 35,000 km</p>
+                <span class="price">₹8.5 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'POLO GT','850000','2021','Petrol','17 km/l','Manual','First Owner','Kerala',
+                'https://gomechanic.in/blog/wp-content/uploads/2020/04/20200304071236_2019-Polo-GT-front-stat.jpg'
+            )">View Details</button><br><br>
+                <p><b>POLO GT :</b>The Volkswagen Polo GT is a sporty hatchback known for its powerful performance,
+                    sharp handling, and solid build quality, delivering a fun and confident driving experience.
+                </p>
+            </div>
+
+
+            <div class="card">
+                <img
+                    src="https://vehicle-images.dealerinspire.com/d55d-110009263/SAL1L9FU2PA110166/e9dd53db1fb106eeb9ff3a5366723176.jpg">
+                <h3>Range Rover</h3>
+                <p>Diesel • 2020 • 42,000 km</p>
+                <span class="price">₹10.2 Lakhs</span>
+                <button class="btt" onclick="viewDetails(
+                'Range Rover','1020000','2020','Diesel','19 km/l','Manual','First Owner','Kochi',
+                'https://vehicle-images.dealerinspire.com/d55d-110009263/SAL1L9FU2PA110166/e9dd53db1fb106eeb9ff3a5366723176.jpg'
+            )">View Details</button><br><br>
+                <p>
+                    <b>Range Rover :</b>The Range Rover is a luxury SUV that combines powerful performance, elegant
+                    design, and exceptional off-road capability, delivering supreme comfort and advanced technology in
+                    every drive.
+                </p>
+            </div>
+
+
+
+
+        </div>
+    </section>
+                 <!-- javascript
+                  ================= --> 
+     <script>
+        function viewDetails(name, price, year, fuel, mileage, transmission, owner, location, image) {
+            const car = { name, price, year, fuel, mileage, transmission, owner, location, image };
+            localStorage.setItem("selectedCar", JSON.stringify(car));
+            window.location.href = "details.html";
+        }
+    </script>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h3 class="logos">Wheel<span>X</span></h3>
+            <p>Your trusted used vehicles marketplace.</p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Email: donkm555@gmail.com</p>
+            <p>Phone: +91 7559890610</p>
+
+            
+            <button id="logoutBtn" onclick="logout()" class="logout-btn">
+                Logout
+            </button>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 WheelX. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+<script>
+
+window.onload = function () {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (isLoggedIn) {
+        logoutBtn.style.display = "inline-block";
+    } else {
+        logoutBtn.style.display = "none";
+    }
+};
+
+
+function logout() {
+    localStorage.removeItem("isLoggedIn");
+    alert("✅ Logout Successful");
+    window.location.href = "index.html";
+}
+</script>
+
+
+</body>
+
+</html>

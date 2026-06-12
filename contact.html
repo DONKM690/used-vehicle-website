@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelX | Contact Us</title>
+
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("UhEq1g41do1_yoe9X");
+        })();
+    </script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <h1 class="logo">Wheel<span>X</span></h1>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <nav class="nav-links">
+            <a href="index.html" class="btn">Home</a>
+            <a href="newcars.html" class="btn">New Cars</a>
+            <a href="sell.html" class="btn">Sell</a>
+            <a href="showroom.html" class="btn">Showrooms</a>
+            <a href="about.html" class="btn">About</a>
+            <a href="login.html" class="btn">Login / Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <h2>Contact Us</h2>
+        <p>Have questions? We’re here to help.</p>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="button" onclick="sendMail()">Send Message</button>
+        </form>
+
+        <div class="info">
+            <p><strong>Email:</strong> weelX07@gmail.com</p>
+            <p><strong>Phone:</strong> +91 7559890610</p>
+            <p><strong>Location:</strong> Kerala, India</p>
+        </div>
+    </section>
+
+    <!-- EmailJS -->
+    <script>
+        function sendMail() {
+
+            //  LOGIN CHECK
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+            if (!isLoggedIn) {
+                alert("⚠️ Please login first to send a message.");
+                window.location.href = "login.html";
+                return;
+            }
+
+            var name = document.getElementById("name").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("⚠️ Please fill in all required fields.");
+                return;
+            }
+
+            var params = {
+                name: name,
+                email: email,
+                message: message
+            };
+
+            emailjs.send('service_vvcc5on', 'template_wxg73nl', params)
+                .then(function () {
+                    alert(" Message Sent Successfully");
+                    document.getElementById("contactForm").reset();
+                    window.location.href = "index.html";
+                })
+                .catch(function (error) {
+                    alert(" Message failed to send. Please try again.");
+                    console.log("FAILED...", error);
+                });
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3 class="logos">Wheel<span>X</span></h3>
+                <p>Your trusted used vehicles marketplace.</p>
+                <p class="follow">FOLLOW US</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: donkm555@gmail.com</p><br>
+                <p>Phone: +91 7559890610</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 WheelX. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

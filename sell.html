@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WheelX | Sell Vehicle</title>
+    <link rel="stylesheet" href="sell.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <header class="navbar">
+        <h1 class="logo">Wheel<span>X</span></h1>
+
+        
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <nav class="nav-links">
+            <a href="index.html" class="btn">Home</a>
+            <a href="newcars.html" class="btn">New Cars</a>
+            <a href="showroom.html" class="btn">Showrooms</a>
+            <a href="contact.html" class="btn">Contact</a>
+            <a href="about.html" class="btn">About</a>
+            <a href="login.html" class="btn">Login / Sign Up</a>
+        </nav>
+    </header>
+
+
+    <!-- Sell Form -->
+    <section class="sell-container">
+        <h2>Sell Your Vehicle</h2>
+
+        <form id="sellForm">
+            <select id="type" required>
+                <option value="">Vehicle Type</option>
+                <option>Car</option>
+                <option>Bike</option>
+            </select>
+
+            <input type="text" id="brand" placeholder="Brand & Model" required>
+            <input type="number" id="year" placeholder="Manufacturing Year" required>
+            <input type="number" id="price" placeholder="Expected Price" required>
+            <input type="text" id="fuel" placeholder="Fuel Type" required>
+            <input type="number" id="mileage" placeholder="Mileage (km/l)" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <input type="number" id="Mobile" placeholder="Mobile" required>
+            
+
+
+            <button type="submit">Post Vehicle</button>
+        </form>
+    </section>
+
+    <script>
+    document.getElementById("sellForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+    
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (!isLoggedIn) {
+            alert("⚠️ Please login first to sell your vehicle.");
+            window.location.href = "login.html";
+            return;
+        }
+
+    
+        const vehicle = {
+            type: document.getElementById("type").value,
+            brand: document.getElementById("brand").value,
+            year: document.getElementById("year").value,
+            price: document.getElementById("price").value,
+            fuel: document.getElementById("fuel").value,
+            mileage: document.getElementById("mileage").value,
+            location: document.getElementById("location").value,
+            Mobile: document.getElementById("Mobile").value
+        };
+
+    
+        let vehicles = JSON.parse(localStorage.getItem("vehicles")) || [];
+        vehicles.push(vehicle);
+        localStorage.setItem("vehicles", JSON.stringify(vehicles));
+
+        alert("✅ Vehicle posted successfully!");
+        window.location.href = "index.html";
+    });
+</script>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="logos">Wheel<span>X</span></h3>
+                <p>Your trusted used vehicles marketplace.</p>
+                <p class="follow">FOLLOW US</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: donkm555@gmail.com</p><br>
+                <p>Phone: +91 7559890610</p>
+            </div>
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>© 2026 WheelX. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
